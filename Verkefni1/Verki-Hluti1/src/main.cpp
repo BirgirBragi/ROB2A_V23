@@ -26,10 +26,10 @@ int main() {
 
   // Drivetrain.driveFor(forward, 150, mm);
   
-  int dist = 50;
-  while (dist != 250){
+  int dist = 500;
+  while (dist != 2500){
     Drivetrain.driveFor(forward,dist,mm);
     Drivetrain.driveFor(reverse,dist,mm);
-    dist += 50;
+    dist += 500;
   }
 }
