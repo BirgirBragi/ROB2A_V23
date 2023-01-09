@@ -26,7 +26,7 @@
       }
     }
  
-Myndband: [https://youtube.com/shorts/2IStZavei58](https://youtube.com/shorts/2IStZavei58)
+Myndband: (https://youtube.com/shorts/2IStZavei58)[https://youtube.com/shorts/2IStZavei58]
 
 ### Hluti 2
 
