@@ -34,58 +34,58 @@ Myndband: [https://youtube.com/shorts/2IStZavei58](https://youtube.com/shorts/2I
 
 ![](https://github.com/BirgirBragi/ROB2A_V23/blob/main/Verkefni1/Verkefni%201%20hluti%202.drawio.png)
 
-   #include "vex.h"
+    #include "vex.h"
 
-   using namespace vex;
+    using namespace vex;
 
-   int main() {
-     // Initializing Robot Configuration. DO NOT REMOVE!
-     vexcodeInit();
+    int main() {
+    // Initializing Robot Configuration. DO NOT REMOVE!
+      vexcodeInit();
 
       int dist = 500;
-  Drivetrain.driveFor(forward,dist,mm);
-  Drivetrain.turnFor(right, 90, degrees);
+      Drivetrain.driveFor(forward,dist,mm);
+      Drivetrain.turnFor(right, 90, degrees);
 
-  Drivetrain.driveFor(forward,dist,mm);
-  Drivetrain.turnFor(left, 90, degrees);
+      Drivetrain.driveFor(forward,dist,mm);
+      Drivetrain.turnFor(left, 90, degrees);
 
-  Drivetrain.driveFor(forward,dist,mm);
-  Drivetrain.turnFor(left, 90, degrees);
+      Drivetrain.driveFor(forward,dist,mm);
+      Drivetrain.turnFor(left, 90, degrees);
 
-  Drivetrain.driveFor(forward,dist,mm);
-  Drivetrain.turnFor(right, 90, degrees);
+      Drivetrain.driveFor(forward,dist,mm);
+      Drivetrain.turnFor(right, 90, degrees);
 
-  Drivetrain.driveFor(forward,dist,mm);
-  Drivetrain.turnFor(right, 90, degrees);
+      Drivetrain.driveFor(forward,dist,mm);
+      Drivetrain.turnFor(right, 90, degrees);
 
-  Drivetrain.driveFor(forward,dist,mm);
-  Drivetrain.turnFor(left, 90, degrees);
+      Drivetrain.driveFor(forward,dist,mm);
+      Drivetrain.turnFor(left, 90, degrees);
 
-  Drivetrain.driveFor(forward,dist,mm);
-  Drivetrain.turnFor(right, 90, degrees);
+      Drivetrain.driveFor(forward,dist,mm);
+      Drivetrain.turnFor(right, 90, degrees);
 
-  Drivetrain.driveFor(forward,dist,mm);
-  Drivetrain.turnFor(right, 90, degrees);
+      Drivetrain.driveFor(forward,dist,mm);
+      Drivetrain.turnFor(right, 90, degrees);
 
-  Drivetrain.driveFor(forward,dist,mm);
-  Drivetrain.turnFor(left, 90, degrees);
+      Drivetrain.driveFor(forward,dist,mm);
+      Drivetrain.turnFor(left, 90, degrees);
 
-  Drivetrain.driveFor(forward,dist,mm);
-  Drivetrain.turnFor(right, 90, degrees);
+      Drivetrain.driveFor(forward,dist,mm);
+      Drivetrain.turnFor(right, 90, degrees);
 
-  Drivetrain.driveFor(forward,dist,mm);
-  Drivetrain.turnFor(right, 90, degrees);
+      Drivetrain.driveFor(forward,dist,mm);
+      Drivetrain.turnFor(right, 90, degrees);
 
-  Drivetrain.driveFor(forward,dist,mm);
-  Drivetrain.turnFor(left, 90, degrees);
+      Drivetrain.driveFor(forward,dist,mm);
+      Drivetrain.turnFor(left, 90, degrees);
 
-  Drivetrain.driveFor(forward,dist,mm);
-  Drivetrain.turnFor(left, 90, degrees);
+      Drivetrain.driveFor(forward,dist,mm);
+      Drivetrain.turnFor(left, 90, degrees);
 
-  Drivetrain.driveFor(forward,dist,mm);
-  Drivetrain.turnFor(right, 90, degrees);
+      Drivetrain.driveFor(forward,dist,mm);
+      Drivetrain.turnFor(right, 90, degrees);
 
-  Drivetrain.driveFor(forward,dist,mm);
-}
+      Drivetrain.driveFor(forward,dist,mm);
+    }
 
 Myndband: [https://youtube.com/shorts/gSnHiCNbB_4?feature=share](https://youtube.com/shorts/gSnHiCNbB_4?feature=share).
