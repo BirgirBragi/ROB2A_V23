@@ -26,10 +26,12 @@
       }
     }
  
-Myndband: (https://youtube.com/shorts/2IStZavei58)[https://youtube.com/shorts/2IStZavei58]
+Myndband: [https://youtube.com/shorts/2IStZavei58](https://youtube.com/shorts/2IStZavei58).
 
 ### Hluti 2
 
 #### Flæðirit:
 
 ![](https://github.com/BirgirBragi/ROB2A_V23/blob/main/Verkefni1/Verkefni%201%20hluti%202.drawio.png)
+
+Myndband: [https://youtube.com/shorts/gSnHiCNbB_4?feature=share](https://youtube.com/shorts/gSnHiCNbB_4?feature=share).
