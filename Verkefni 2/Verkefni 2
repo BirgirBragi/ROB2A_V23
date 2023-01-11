@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-01-11T10:14:10.146Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" version="20.8.3" etag="apYf4vPPYcCdVStYl4F0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-11T10:24:55.394Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" version="20.8.3" etag="Py33qs2nZTZBZbaSODOa" type="github">
   <diagram id="UwBTpjNELBximGrl4gr3" name="Page-1">
     <mxGraphModel dx="2762" dy="1008" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -47,16 +47,19 @@
           <mxGeometry x="640" y="300" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="STMO_E0iHFCovN2k3_EQ-11" value="Move(RightMotor, Left)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="470" y="310" width="120" height="60" as="geometry" />
+          <mxGeometry x="460" y="310" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="STMO_E0iHFCovN2k3_EQ-13" value="Move(RightMotor, Forward)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="620" y="170" width="120" height="60" as="geometry" />
+          <mxGeometry x="620" y="180" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="STMO_E0iHFCovN2k3_EQ-15" value="Move(RightMotor, Backwards)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="620" y="450" width="120" height="60" as="geometry" />
+          <mxGeometry x="620" y="440" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="STMO_E0iHFCovN2k3_EQ-17" value="Move(RightMotor, Right)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="790" y="310" width="120" height="60" as="geometry" />
+          <mxGeometry x="770" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="STMO_E0iHFCovN2k3_EQ-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="STMO_E0iHFCovN2k3_EQ-19" target="STMO_E0iHFCovN2k3_EQ-29">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="STMO_E0iHFCovN2k3_EQ-19" value="L2" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-50" y="20" width="120" height="60" as="geometry" />
@@ -64,11 +67,32 @@
         <mxCell id="STMO_E0iHFCovN2k3_EQ-20" value="L1" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-50" y="90" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="STMO_E0iHFCovN2k3_EQ-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="STMO_E0iHFCovN2k3_EQ-21" target="STMO_E0iHFCovN2k3_EQ-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="STMO_E0iHFCovN2k3_EQ-21" value="R1" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="790" y="80" width="120" height="60" as="geometry" />
+          <mxGeometry x="790" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="STMO_E0iHFCovN2k3_EQ-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="STMO_E0iHFCovN2k3_EQ-22" target="STMO_E0iHFCovN2k3_EQ-33">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="STMO_E0iHFCovN2k3_EQ-22" value="R2" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="790" y="10" width="120" height="60" as="geometry" />
+          <mxGeometry x="790" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="STMO_E0iHFCovN2k3_EQ-25" value="Claw(Descend)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="STMO_E0iHFCovN2k3_EQ-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="STMO_E0iHFCovN2k3_EQ-20" target="STMO_E0iHFCovN2k3_EQ-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="STMO_E0iHFCovN2k3_EQ-29" value="Claw(Lift)" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="STMO_E0iHFCovN2k3_EQ-31" value="Arm(Close)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="STMO_E0iHFCovN2k3_EQ-33" value="Arm(Open)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="20" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
