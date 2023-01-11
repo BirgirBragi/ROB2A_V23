@@ -89,3 +89,8 @@ Myndband: [https://youtube.com/shorts/2IStZavei58](https://youtube.com/shorts/2I
     }
 
 Myndband: [https://youtube.com/shorts/gSnHiCNbB_4?feature=share](https://youtube.com/shorts/gSnHiCNbB_4?feature=share).
+
+
+## Verkefni 2
+
+![](https://github.com/BirgirBragi/ROB2A_V23/blob/main/Verkefni%202/Verkefni%202.jpg)
