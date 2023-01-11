@@ -93,7 +93,13 @@ Myndband: [https://youtube.com/shorts/gSnHiCNbB_4?feature=share](https://youtube
 
 ## Verkefni 2
 
+### Hluti 1
+
+#### Flæðirit
+
 ![](https://github.com/BirgirBragi/ROB2A_V23/blob/main/Verkefni%202/Verkefni%202.jpg)
+
+#### Kóði
 
     #include "vex.h"
 
@@ -163,3 +169,5 @@ Myndband: [https://youtube.com/shorts/gSnHiCNbB_4?feature=share](https://youtube
       }
   
     }
+
+Myndband: []()
