@@ -170,7 +170,7 @@ Myndband: [https://youtube.com/shorts/gSnHiCNbB_4?feature=share](https://youtube
   
     }
 
-Myndband: []()
+Myndband: [https://youtu.be/bRrz6u8fqKY](https://youtu.be/bRrz6u8fqKY)
 
 ### Hluti 2
 
