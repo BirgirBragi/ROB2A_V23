@@ -176,6 +176,8 @@ Myndband: [https://youtu.be/bRrz6u8fqKY](https://youtu.be/bRrz6u8fqKY)
 
 #### Flæðirit
 
+![](https://github.com/BirgirBragi/ROB2A_V23/blob/main/Untitled%20Diagram.drawio.png)
+
 #### Kóði
 
      #include "vex.h"
