@@ -173,3 +173,77 @@ Myndband: [https://youtube.com/shorts/gSnHiCNbB_4?feature=share](https://youtube
 Myndband: []()
 
 ### Hluti 2
+
+#### Flæðirit
+
+#### Kóði
+
+     #include "vex.h"
+
+     using namespace vex;
+
+     void stop() {
+       task::stopAll();
+       //Drivetrain.stop(hold);
+     }
+
+
+
+     int mainTask() {
+       // Initializing Robot Configuration. DO NOT REMOVE!
+       Controller1.ButtonB.pressed(stop);{
+         int dist = 500;
+         Drivetrain.driveFor(forward,dist,mm);
+         Drivetrain.turnFor(right, 90, degrees);
+
+         Drivetrain.driveFor(forward,dist,mm);
+         Drivetrain.turnFor(left, 90, degrees);
+
+         Drivetrain.driveFor(forward,dist,mm);
+         Drivetrain.turnFor(left, 90, degrees);
+
+         Drivetrain.driveFor(forward,dist,mm);
+         Drivetrain.turnFor(right, 90, degrees);
+
+         Drivetrain.driveFor(forward,dist,mm);
+         Drivetrain.turnFor(right, 90, degrees);
+
+         Drivetrain.driveFor(forward,dist,mm);
+         Drivetrain.turnFor(left, 90, degrees);
+
+         Drivetrain.driveFor(forward,dist,mm);
+         Drivetrain.turnFor(right, 90, degrees);
+
+         Drivetrain.driveFor(forward,dist,mm);
+         Drivetrain.turnFor(right, 90, degrees);
+
+         Drivetrain.driveFor(forward,dist,mm);
+         Drivetrain.turnFor(left, 90, degrees);
+
+         Drivetrain.driveFor(forward,dist,mm);
+         Drivetrain.turnFor(right, 90, degrees);
+
+         Drivetrain.driveFor(forward,dist,mm);
+         Drivetrain.turnFor(right, 90, degrees);
+
+         Drivetrain.driveFor(forward,dist,mm);
+         Drivetrain.turnFor(left, 90, degrees);
+
+         Drivetrain.driveFor(forward,dist,mm);
+         Drivetrain.turnFor(left, 90, degrees);
+
+         Drivetrain.driveFor(forward,dist,mm);
+         Drivetrain.turnFor(right, 90, degrees);
+
+         Drivetrain.driveFor(forward,dist,mm);
+
+       }
+       return 0;
+     }
+
+     int main(){
+       vexcodeInit();
+       vex::task t(mainTask);
+     }
+
+Myndband: []()
