@@ -249,3 +249,11 @@ Myndband: [https://youtu.be/bRrz6u8fqKY](https://youtu.be/bRrz6u8fqKY)
      }
 
 Myndband: [https://youtube.com/shorts/dTDOvD2s9gM?feature=share](https://youtube.com/shorts/dTDOvD2s9gM?feature=share)
+
+## Verkefni 3
+
+### Hluti 1
+
+#### Flæðirit:
+
+![](https://github.com/BirgirBragi/ROB2A_V23/blob/main/Verkefni%203/Untitled%20Diagram.jpg)
