@@ -1,11 +1,20 @@
-<mxfile host="app.diagrams.net" modified="2023-01-18T11:57:34.168Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="20.8.5" etag="vpx8fZrk1Tr1f01M1e8r" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-18T11:59:26.779Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="20.8.5" etag="OWWl0-qjTZTd3xpHffRq" type="github">
   <diagram id="Hh9mBltEBBYd4GxImdHt" name="Page-1">
     <mxGraphModel dx="1434" dy="788" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="cPJrAUq1hi2ilmZjBuvy-1" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="60" y="80" width="120" height="80" as="geometry" />
+        <mxCell id="cPJrAUq1hi2ilmZjBuvy-1" value="Start" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="260" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cPJrAUq1hi2ilmZjBuvy-2" value="mainTask()" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cPJrAUq1hi2ilmZjBuvy-3" value="speedTask()" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cPJrAUq1hi2ilmZjBuvy-4" value="if (wall){&lt;br&gt;stop, turn right&lt;br&gt;}" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="160" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
