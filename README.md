@@ -257,3 +257,98 @@ Myndband: [https://youtube.com/shorts/dTDOvD2s9gM?feature=share](https://youtube
 #### Flæðirit:
 
 ![](https://github.com/BirgirBragi/ROB2A_V23/blob/main/Verkefni%203/Untitled%20Diagram.jpg)
+
+#### Kóði
+
+     #include "vex.h"
+
+     using namespace vex;
+     double startTimeA = Brain.timer(vex::timeUnits (sec));
+
+     void stop() {
+        task::stopAll();
+        Drivetrain.stop();
+      }
+
+     int speedTask(){
+       double vel = 0.0;
+       //int startTimi = Brain.timer(vex::timeUnits (sec));
+       int currTimi;
+       float metrar = 0;
+       float velocityTimesFive = 0;
+       int counter = 0;
+       while(true){
+          vel = Drivetrain.velocity(rpm);
+          float rps = vel/60;
+          float omega = 2 * 3.14159265359 * rps;
+          float V = omega * 0.05;
+          Brain.Screen.print("%.2f", V);
+          Brain.Screen.print(" m/s ");
+          //Brain.Screen.print(startTimi);
+          Brain.Screen.print(" ");
+          currTimi = Brain.timer(vex::timeUnits (sec));
+          //if(currTimi - startTimi == 1){
+          if(counter<5){
+             velocityTimesFive += V;
+             counter++;
+           }
+           else{
+             counter = 0;
+             metrar += velocityTimesFive/5;
+             velocityTimesFive = 0;
+           }
+          Brain.Screen.print("%.2f",metrar);
+          Brain.Screen.print(" m ");
+          wait(200,msec);
+          Brain.Screen.setCursor(1, 1);
+          Brain.Screen.clearScreen();
+       }
+       return 0;
+     }
+
+     int mainTask() {
+       // Initializing Robot Configuration. DO NOT REMOVE!
+       // Wait 1 second before driving forward.
+       //wait(1, seconds);
+       //vex::task t(drivingTask);
+
+       // The robot will stop driving when the Range Finder is less than 300 mm away
+       // from an object.
+         BumperE.pressed(stop);
+
+         while(BumperE.pressing()!= true){  
+         if (LightF.brightness() > 0 && LightF.brightness() < 50) {
+           Drivetrain.stop();
+         }
+         else{
+           //Brain.Screen.print("%.2f", RangeFinderG.distance(mm));
+           //wait(50, msec);
+           //Brain.Screen.setCursor(1, 1);
+           //Brain.Screen.clearScreen();
+           //wait(5, msec);
+           if(RangeFinderG.distance(mm) > 300){
+             Drivetrain.drive(forward);
+           }
+           else{
+             Drivetrain.turnFor(right,90,degrees);
+             wait(500, msec);
+           }
+         }
+         }
+
+         // Brain.Screen.print("%.2f", RangeFinderG.distance(mm));
+         // wait(200, msec);
+         // Brain.Screen.setCursor(1, 1);
+         // Brain.Screen.clearScreen();
+         // wait(5, msec);
+         return 0;
+       }
+
+     int main(){
+       vexcodeInit();
+       wait(1,sec);
+       vex::task t(mainTask);
+       vex::task v(speedTask);
+     }
+
+Myndband: []()
