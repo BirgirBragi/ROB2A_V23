@@ -9,7 +9,7 @@
 ![](https://github.com/BirgirBragi/ROB2A_V23/blob/main/Verkefni1/Verkefni%201.drawio.png) 
 
 #### Kóði:
-
+```C++
      include "vex.h"
 
     using namespace vex;
@@ -25,7 +25,7 @@
         dist += 500;
       }
     }
- 
+ ```
 Myndband: [https://youtube.com/shorts/2IStZavei58](https://youtube.com/shorts/2IStZavei58).
 
 ### Hluti 2
