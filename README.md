@@ -366,71 +366,78 @@ Myndband: [https://youtu.be/tr4o4p80N7E](https://youtu.be/tr4o4p80N7E)
 
 #### Kóði
 ```C++
-     #include "vex.h"
+#include "vex.h"
 
-     using namespace vex;
+using namespace vex;
 
-     float threshold;
+void stop() {
+  task::stopAll();
+  LeftMotor.stop();
+  RightMotor.stop();
+}
 
-     int printTask(){
-       threshold = 30;
-       while (true){
-       if (LineTrackerB.reflectivity() > threshold) {
-         Brain.Screen.print("Middle");
-       }
-       else if (LineTrackerC.reflectivity() > threshold) {
-         Brain.Screen.print("Left");
-       }
-       else if (LineTrackerA.reflectivity() > threshold) {
-         Brain.Screen.print("Right");
-       }
-       wait(5,msec);
-       Brain.Screen.setCursor(1, 1);
-       Brain.Screen.clearScreen();
-       }
-       return 0;
-     }
+float threshold;
 
-     int mainTask() {
-       // Initializing Robot Configuration. DO NOT REMOVE!
+int printTask(){
+  threshold = 30;
+  while (true){
+  if (LineTrackerB.reflectivity() > threshold) {
+    Brain.Screen.print("Middle");
+  }
+  else if (LineTrackerC.reflectivity() > threshold) {
+    Brain.Screen.print("Left");
+  }
+  else if (LineTrackerA.reflectivity() > threshold) {
+    Brain.Screen.print("Right");
+  }
+  wait(5,msec);
+  Brain.Screen.setCursor(1, 1);
+  Brain.Screen.clearScreen();
+  }
+  return 0;
+}
 
-       threshold = 30;
-       while (true) {
-         // If the reflectivity is greater than the threshold it will move the LeftMotor forward
-         if (LineTrackerB.reflectivity() > threshold) {
-           LeftMotor.spin(forward);
-           RightMotor.spin(forward);
-           // Brain.Screen.print("Middle");
-           // wait(5, msec);
-           // Brain.Screen.setCursor(1, 1);
-           // Brain.Screen.clearScreen();
-           //RightMotor.stop();
-         }
-         if(LineTrackerC.reflectivity() > threshold){
-           RightMotor.spin(forward);
-           LeftMotor.stop();
-           // Brain.Screen.print("Left");
-           // wait(5, msec);
-           // Brain.Screen.setCursor(1, 1);
-           // Brain.Screen.clearScreen();
-         }
-         if(LineTrackerA.reflectivity() > threshold){
-           LeftMotor.spin(forward);
-           RightMotor.stop();
-           // Brain.Screen.print("Right");
-           // wait(5, msec);
-           // Brain.Screen.setCursor(1, 1);
-           // Brain.Screen.clearScreen();
-         }
-         wait(5, msec);
-         // Brain.Screen.setCursor(1, 1);
-         // Brain.Screen.clearScreen();
-       }
-     }
+int mainTask() {
+  // Initializing Robot Configuration. DO NOT REMOVE!
+  BumperE.pressed(stop);
+  threshold = 30;
+  while (true) {
+    // If the reflectivity is greater than the threshold it will move the LeftMotor forward
+    if (LineTrackerB.reflectivity() > threshold) {
+      LeftMotor.spin(forward);
+      RightMotor.spin(forward);
+      // Brain.Screen.print("Middle");
+      // wait(5, msec);
+      // Brain.Screen.setCursor(1, 1);
+      // Brain.Screen.clearScreen();
+      //RightMotor.stop();
+    }
+    if(LineTrackerC.reflectivity() > threshold){
+      RightMotor.spin(forward);
+      LeftMotor.stop();
+      // Brain.Screen.print("Left");
+      // wait(5, msec);
+      // Brain.Screen.setCursor(1, 1);
+      // Brain.Screen.clearScreen();
+    }
+    if(LineTrackerA.reflectivity() > threshold){
+      LeftMotor.spin(forward);
+      RightMotor.stop();
+      // Brain.Screen.print("Right");
+      // wait(5, msec);
+      // Brain.Screen.setCursor(1, 1);
+      // Brain.Screen.clearScreen();
+    }
+    wait(5, msec);
+    // Brain.Screen.setCursor(1, 1);
+    // Brain.Screen.clearScreen();
+  }
+}
 
-     int main(){
-       vexcodeInit();
-       vex::task t(mainTask);
-       vex::task p(printTask);
-     }
+int main(){
+  vexcodeInit();
+  vex::task t(mainTask);
+  vex::task p(printTask);
+}
+
 ```
