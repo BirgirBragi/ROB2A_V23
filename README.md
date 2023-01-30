@@ -364,6 +364,8 @@ Myndband: [https://youtu.be/tr4o4p80N7E](https://youtu.be/tr4o4p80N7E)
 
 #### Flæðirit
 
+![](https://github.com/BirgirBragi/ROB2A_V23/blob/main/Verkefni%204/Untitled%20Diagram.drawio%20(1).png)
+
 #### Kóði
 ```C++
 #include "vex.h"
