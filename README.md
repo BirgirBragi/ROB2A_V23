@@ -33,6 +33,7 @@ Myndband: [https://youtube.com/shorts/2IStZavei58](https://youtube.com/shorts/2I
 #### Flæðirit:
 
 ![](https://github.com/BirgirBragi/ROB2A_V23/blob/main/Verkefni1/Verkefni%201%20hluti%202.drawio.png)
+```C++
 
     #include "vex.h"
 
@@ -87,6 +88,7 @@ Myndband: [https://youtube.com/shorts/2IStZavei58](https://youtube.com/shorts/2I
 
       Drivetrain.driveFor(forward,dist,mm);
     }
+```
 
 Myndband: [https://youtube.com/shorts/gSnHiCNbB_4?feature=share](https://youtube.com/shorts/gSnHiCNbB_4?feature=share).
 
@@ -100,7 +102,7 @@ Myndband: [https://youtube.com/shorts/gSnHiCNbB_4?feature=share](https://youtube
 ![](https://github.com/BirgirBragi/ROB2A_V23/blob/main/Verkefni%202/Verkefni%202.jpg)
 
 #### Kóði
-
+```C++
     #include "vex.h"
 
     using namespace vex;
@@ -169,6 +171,7 @@ Myndband: [https://youtube.com/shorts/gSnHiCNbB_4?feature=share](https://youtube
       }
   
     }
+```
 
 Myndband: [https://youtu.be/bRrz6u8fqKY](https://youtu.be/bRrz6u8fqKY)
 
@@ -179,7 +182,7 @@ Myndband: [https://youtu.be/bRrz6u8fqKY](https://youtu.be/bRrz6u8fqKY)
 ![](https://github.com/BirgirBragi/ROB2A_V23/blob/main/Untitled%20Diagram.drawio.png)
 
 #### Kóði
-
+```C++
      #include "vex.h"
 
      using namespace vex;
@@ -247,6 +250,7 @@ Myndband: [https://youtu.be/bRrz6u8fqKY](https://youtu.be/bRrz6u8fqKY)
        vexcodeInit();
        vex::task t(mainTask);
      }
+```
 
 Myndband: [https://youtube.com/shorts/dTDOvD2s9gM?feature=share](https://youtube.com/shorts/dTDOvD2s9gM?feature=share)
 
@@ -259,7 +263,7 @@ Myndband: [https://youtube.com/shorts/dTDOvD2s9gM?feature=share](https://youtube
 ![](https://github.com/BirgirBragi/ROB2A_V23/blob/main/Verkefni%203/Untitled%20Diagram.jpg)
 
 #### Kóði
-
+```C++
      #include "vex.h"
 
      using namespace vex;
@@ -350,5 +354,83 @@ Myndband: [https://youtube.com/shorts/dTDOvD2s9gM?feature=share](https://youtube
        vex::task t(mainTask);
        vex::task v(speedTask);
      }
+```
 
 Myndband: [https://youtu.be/tr4o4p80N7E](https://youtu.be/tr4o4p80N7E)
+
+
+
+## Verkefni 4
+
+#### Flæðirit
+
+#### Kóði
+```C++
+     #include "vex.h"
+
+     using namespace vex;
+
+     float threshold;
+
+     int printTask(){
+       threshold = 30;
+       while (true){
+       if (LineTrackerB.reflectivity() > threshold) {
+         Brain.Screen.print("Middle");
+       }
+       else if (LineTrackerC.reflectivity() > threshold) {
+         Brain.Screen.print("Left");
+       }
+       else if (LineTrackerA.reflectivity() > threshold) {
+         Brain.Screen.print("Right");
+       }
+       wait(5,msec);
+       Brain.Screen.setCursor(1, 1);
+       Brain.Screen.clearScreen();
+       }
+       return 0;
+     }
+
+     int mainTask() {
+       // Initializing Robot Configuration. DO NOT REMOVE!
+
+       threshold = 30;
+       while (true) {
+         // If the reflectivity is greater than the threshold it will move the LeftMotor forward
+         if (LineTrackerB.reflectivity() > threshold) {
+           LeftMotor.spin(forward);
+           RightMotor.spin(forward);
+           // Brain.Screen.print("Middle");
+           // wait(5, msec);
+           // Brain.Screen.setCursor(1, 1);
+           // Brain.Screen.clearScreen();
+           //RightMotor.stop();
+         }
+         if(LineTrackerC.reflectivity() > threshold){
+           RightMotor.spin(forward);
+           LeftMotor.stop();
+           // Brain.Screen.print("Left");
+           // wait(5, msec);
+           // Brain.Screen.setCursor(1, 1);
+           // Brain.Screen.clearScreen();
+         }
+         if(LineTrackerA.reflectivity() > threshold){
+           LeftMotor.spin(forward);
+           RightMotor.stop();
+           // Brain.Screen.print("Right");
+           // wait(5, msec);
+           // Brain.Screen.setCursor(1, 1);
+           // Brain.Screen.clearScreen();
+         }
+         wait(5, msec);
+         // Brain.Screen.setCursor(1, 1);
+         // Brain.Screen.clearScreen();
+       }
+     }
+
+     int main(){
+       vexcodeInit();
+       vex::task t(mainTask);
+       vex::task p(printTask);
+     }
+```
