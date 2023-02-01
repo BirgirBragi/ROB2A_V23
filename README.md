@@ -445,3 +445,174 @@ int main(){
 ```
 
 Myndband: [https://youtu.be/_dlASHCSRMg](https://youtu.be/_dlASHCSRMg)
+
+## Verkefni 5
+
+#### Kóði
+
+´´´C++
+#include "vex.h"
+
+using namespace vex;
+
+// Function to run when the emergency stop button is pressed
+void onEStopPressed() {
+  RoboticArm1.emergencyStop();
+}
+
+// Task function to constantly display the arm position and sensor values on the brain screen
+int positionSensorDisplay() {
+  while (true) {
+    Brain.Screen.clearScreen();
+
+    // Display the X position on row 1
+    Brain.Screen.setCursor(1, 1);
+    Brain.Screen.print("Arm X: %0.3f", RoboticArm1.getAxisPosition(xaxis));
+
+    // Display the Y position on row 2
+    Brain.Screen.newLine();
+    Brain.Screen.print("Arm Y: %0.3f", RoboticArm1.getAxisPosition(yaxis));
+
+    // Display the Z position on row 3
+    Brain.Screen.newLine();
+    Brain.Screen.print("Arm Z: %0.3f", RoboticArm1.getAxisPosition(zaxis));
+
+    // Display if a disk is detected on row 4
+    Brain.Screen.newLine();
+    Brain.Screen.print("Disk Detect: %s", Optical6.isNearObject() ? "TRUE" : "FALSE");
+
+    // Display the color of the disk if an object is found on row 5
+    Brain.Screen.newLine();
+    Brain.Screen.print("R: %s", Optical6.color() == red ? "TRUE" : "FALSE");
+    Brain.Screen.print(" / B: %s", Optical6.color() == blue ? "TRUE" : "FALSE");
+    Brain.Screen.print(" / G: %s", Optical6.color() == green ? "TRUE" : "FALSE");
+
+    // Display the percentage of light reflected back from the Load Sensor on row 6
+    Brain.Screen.newLine();
+    Brain.Screen.print("Load: %3d", Load.reflectivity());
+
+    // Display the percentage of light reflected back from the Pickup Sensor on row 7
+    Brain.Screen.newLine();
+    Brain.Screen.print("Pickup: %3d", Pickup.reflectivity());
+
+    // Display the percentage of light reflected back from the Exit Sensor on row 8
+    Brain.Screen.newLine();
+    Brain.Screen.print("Exit: %3d", Exit.reflectivity());
+    wait(0.2, seconds);
+  }
+  return 0;
+}
+
+// sort a red disc
+void onRedDetected() {
+  // Insert code here for sorting the red discs
+  EntryMotor.spin(forward);
+  wait(2,sec);
+  EntryMotor.stop();
+  TransportMotor.spin(forward);
+  waitUntil(Load.reflectivity()>10);
+  DiverterMotor.spinToPosition(90,degrees);
+  ExitMotor.spin(forward);
+  waitUntil(Exit.reflectivity()>10);
+  TransportMotor.stop();
+  ExitMotor.stop();
+  //DiverterMotor.spinToPosition(-90,degrees);
+  //DiverterMotor.stop();
+}
+
+// sort a green disc
+void onGreenDetected() {
+    EntryMotor.spin(forward);
+    wait(2,sec);
+    EntryMotor.stop();
+    TransportMotor.spin(forward);
+    waitUntil(Load.reflectivity()>10);
+    DiverterMotor.spinToPosition(0,degrees);
+    waitUntil(Pickup.reflectivity()>10);
+    //DiverterMotor.stop();
+    TransportMotor.stop();
+    wait(1,sec);
+    RoboticArm1.moveToPositionJoint(4.384,-0.029,3.2);
+    wait(20,sec);
+    RoboticArm1.moveToPositionJoint(4.229,6.270, 2.760);
+    wait(1,sec);
+    RoboticArm1.moveToPositionJoint(4.229,6.270, 2.460);
+    Magnet7.pickup();
+    wait(1,sec);
+    RoboticArm1.moveToPositionJoint(8.891,4.111,2.842);
+    wait(1,sec);
+    Magnet7.drop();
+}
+
+// sort a blue disc
+void onBlueDetected() {
+  // Insert code here for sorting the blue discs
+    EntryMotor.spin(forward);
+    wait(2,sec);
+    EntryMotor.stop();
+    TransportMotor.spin(forward);
+    waitUntil(Load.reflectivity()>10);
+    DiverterMotor.spinToPosition(0,degrees);
+    waitUntil(Pickup.reflectivity()>10);
+    //DiverterMotor.stop();
+    TransportMotor.stop();
+    wait(1,sec);
+    RoboticArm1.moveToPositionJoint(4.384,-0.029,3.2);
+    wait(20,sec);
+    RoboticArm1.moveToPositionJoint(4.229,6.270, 2.760);
+    wait(1,sec);
+    RoboticArm1.moveToPositionJoint(4.229,6.270, 2.660);
+    Magnet7.pickup();
+    wait(1,sec);
+    RoboticArm1.moveToPositionJoint(8.891,4.111,2.842);
+    wait(1,sec);
+    Magnet7.drop();
+}
+
+int main() {
+  // Initializing Robot Configuration. DO NOT REMOVE!
+  vexcodeInit();
+  
+    // register emergency stop event handler
+  EStop.pressed(onEStopPressed);
+
+  // short wait to make sure the emergency stop event is fully registered
+  wait(15, msec);
+
+  // initial device setup
+  RoboticArm1.setMasteringValues(1781,2267,1975,502);
+  RoboticArm1.setToolTipOffset(-0.7, 0.0, -1.0);
+  Magnet7.setPower(100);
+  Optical6.setLight(ledState::on);
+  Optical6.setLightPower(100, percent);
+  EntryMotor.setVelocity(70, percent);
+  TransportMotor.setVelocity(15, percent);
+  ExitMotor.setVelocity(50, percent);
+  DiverterMotor.setVelocity(30, percent);
+  Brain.Screen.setFont(mono30);
+
+  // start the position and sensor value display task
+  vex::task positionSensorDisplayTask(positionSensorDisplay);
+
+  // actual logic for sorting discs by color
+  while (true) {
+    //TransportMotor.spin(forward);
+    //Magnet5.setPower(0);
+    //Magnet7.drop();
+    
+    waitUntil(Optical6.isNearObject());
+    if (Optical6.color() == red) {
+      onRedDetected();
+    }
+    else if (Optical6.color() == blue)
+    {
+      onBlueDetected();
+    }
+    else if (Optical6.color() == green)
+    {
+      onGreenDetected();
+    }
+    wait(5, msec);
+  }
+}
+´´´
