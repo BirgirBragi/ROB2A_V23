@@ -450,7 +450,7 @@ Myndband: [https://youtu.be/_dlASHCSRMg](https://youtu.be/_dlASHCSRMg)
 
 #### Kóði
 
-´´´C++
+```C++
 #include "vex.h"
 
 using namespace vex;
@@ -516,8 +516,6 @@ void onRedDetected() {
   waitUntil(Exit.reflectivity()>10);
   TransportMotor.stop();
   ExitMotor.stop();
-  //DiverterMotor.spinToPosition(-90,degrees);
-  //DiverterMotor.stop();
 }
 
 // sort a green disc
@@ -529,7 +527,6 @@ void onGreenDetected() {
     waitUntil(Load.reflectivity()>10);
     DiverterMotor.spinToPosition(0,degrees);
     waitUntil(Pickup.reflectivity()>10);
-    //DiverterMotor.stop();
     TransportMotor.stop();
     wait(1,sec);
     RoboticArm1.moveToPositionJoint(4.384,-0.029,3.2);
@@ -596,9 +593,6 @@ int main() {
 
   // actual logic for sorting discs by color
   while (true) {
-    //TransportMotor.spin(forward);
-    //Magnet5.setPower(0);
-    //Magnet7.drop();
     
     waitUntil(Optical6.isNearObject());
     if (Optical6.color() == red) {
@@ -615,4 +609,6 @@ int main() {
     wait(5, msec);
   }
 }
-´´´
+```
+
+Myndband: []()
