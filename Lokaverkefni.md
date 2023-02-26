@@ -10,4 +10,10 @@
 
 ### Vélbúnaður
 
-- 
+- 2 Drivetrain Motorar
+- 2 Motorar fyrir Claw og Arm
+- Line Sensor
+- UltraSonic Sensor
+
+### Flæðirit
+
